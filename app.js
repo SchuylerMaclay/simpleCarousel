@@ -25,26 +25,48 @@
   };
 
   CarouselController.prototype.moveLeft = function () {
-    this.currentBox = document.getElementById("box" + this.currentBoxId);
-    console.log(this.currentBox);
+    // console.log(this.currentBox);
+    console.log(this.currentBoxId);
     var boxes = this.boxes;
     var position = ((this.currentBoxId * 600));
-    this.currentBoxId = (this.currentBoxId + 1);
-    console.log(this.currentBoxId);
+    // this.currentBoxId = ((this.currentBoxId + 1)%3);
+    this.currentBoxId = ((this.currentBoxId + 1));
+    this.currentBox = document.getElementById("box" + this.currentBoxId);
     for (var i = 0; i < boxes.length; i++) {
-      var lastChild = document.getElementById("myList").lastChild;
-      if (this.currentBoxId === 3 && boxes.length > 2) {
-        var nextBox = document.getElementById("box" + (1));
-        document.getElementById("carousel").appendChild(nextBox);
-        console.log("lastbox:", nextBox);
-        // nextBox.className = "jump";
-        nextBox.style.left = -3*600 +'px';
-        // nextBox.transform ='translate('+ -4*600 +'px)';
-        // nextBox.className = "box";
-        console.log("lastbox:reset:", nextBox);
-      }
+      // console.log("last:", lastChild);
+      // console.log("current:", this.currentBox);
       boxes[i].style.transform = 'translate('+ position +'px)';
       boxes[i].style.webkitTransform = 'translate('+ position +'px)';
+    }
+
+    var lastChild = document.getElementById("carousel").lastElementChild;
+    console.log("lastchild", lastChild);
+
+    // console.log("current box id before modulo", this.currentBoxId);
+    console.log("current box id", this.currentBoxId);
+    // debugger
+    var boxPredictor = ((this.currentBoxId%3)+1);
+    console.log("box Predictor", boxPredictor);
+    var boxIdHere = 0;
+    if (this.currentBoxId%3 === 0){
+      boxIdHere = 3;
+      console.log("in three:", boxIdHere);
+    }else {
+      boxIdHere = this.currentBoxId%3;
+      console.log("in other:", boxIdHere);
+    }
+    this.currentBox = document.getElementById("box" + boxIdHere);
+    console.log("current box", this.currentBox);
+
+    if (this.currentBox === lastChild && boxes.length > 2) {
+      var nextBox = document.getElementById("box" + ((boxIdHere%3)+1));
+      document.getElementById("carousel").appendChild(nextBox);
+      console.log("next:", nextBox);
+      // nextBox.className = "jump";
+      nextBox.style.left = -3*600 +'px';
+      // nextBox.transform ='translate('+ -4*600 +'px)';
+      // nextBox.className = "box";
+      console.log("lastbox:reset:", nextBox);
     }
   };
 
