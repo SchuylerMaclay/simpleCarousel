@@ -9,7 +9,7 @@ a {
   padding: 0px;
   position: relative;
 }
-.carousel {
+#carousel {
   width: 600px;
   height: 400px;
   overflow: hidden;
@@ -20,6 +20,14 @@ a {
 .box {
   -webkit-transition: transform 1s;
   transition: transform 1s;
+  position: absolute;
+  z-index: 1;
+  width: 600px;
+  height: 400px;
+}
+.jump {
+  -webkit-transition: transform 0s;
+  transition: transform 0s;
   position: absolute;
   z-index: 1;
   width: 600px;
