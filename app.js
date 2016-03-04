@@ -1,25 +1,31 @@
 (function() {
   'use strict';
-  // var currentBox =
+
 
   var leftButton = document.getElementById("left-button");
   leftButton.addEventListener("click", moveLeft);
   var rightButton = document.getElementById("right-button");
   rightButton.addEventListener("click", rightButton);
 
+  var boxes = document.getElementsByClassName("box");
+  for (var i = 0; i < boxes.length; i++) {
+    // console.log(boxes[i].style);
+    boxes[i].style.transform = 'translate(0px)';
+    boxes[i].style.webkitTransform = 'translate(0px)';
+  }
 
 }());
 
 function moveLeft() {
-  currentBox = document.getElementById("box1");
-  var position = 0;
-  var id = setInterval(frame, 5);
-  function frame() {
-    if (position === 600) {
-      clearInterval(id);
-    } else {
-      position += 5;
-      currentBox.style.left = position + 'px';
-    }
+  var boxes = document.getElementsByClassName("box");
+  var position = '600px';
+  // transform: (20px, 20px)
+  console.log(boxes);
+
+  for (var i = 0; i < boxes.length; i++) {
+    // console.log(boxes[i].style);
+    boxes[i].style.transform = 'translate('+ position +')';
+    boxes[i].style.webkitTransform = 'translate('+ position +')';
   }
+
 }
