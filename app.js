@@ -32,12 +32,14 @@
     this.currentBoxId = (this.currentBoxId + 1);
     console.log(this.currentBoxId);
     for (var i = 0; i < boxes.length; i++) {
-      if (this.currentBoxId === 3) {
+      var lastChild = document.getElementById("myList").lastChild;
+      if (this.currentBoxId === 3 && boxes.length > 2) {
         var nextBox = document.getElementById("box" + (1));
         document.getElementById("carousel").appendChild(nextBox);
         console.log("lastbox:", nextBox);
         // nextBox.className = "jump";
-        nextBox.transform ='translate('+ -2*600 +'px)';
+        nextBox.style.left = -3*600 +'px';
+        // nextBox.transform ='translate('+ -4*600 +'px)';
         // nextBox.className = "box";
         console.log("lastbox:reset:", nextBox);
       }
