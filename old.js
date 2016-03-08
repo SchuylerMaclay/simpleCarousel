@@ -2,8 +2,8 @@
     'use strict';
 
     var CarouselController = function () {
-        this.currentBoxId = 1;
-        this.currentBox = document.getElementById("box" + this.currentBoxId);
+        this.distanceCounter = 1;
+        this.currentBox = document.getElementById("box" + this.distanceCounter);
         this.leftButton = document.getElementById("left-button");
         this.rightButton = document.getElementById("right-button");
         this.boxes = document.getElementById("box-wrapper");
@@ -31,14 +31,14 @@
 
     CarouselController.prototype.moveLeft = function () {
 
-        var position = ((this.currentBoxId * 600));
+        var position = ((this.distanceCounter * 600));
         var boxes = this.boxes;
 
         boxes.style.transform = 'translate(' + position + 'px)';
         boxes.style.webkitTransform = 'translate(' + position + 'px)';
 
-        this.currentBoxId = ((this.currentBoxId + 1));
-        this.currentBox = document.getElementById("box" + this.currentBoxId);
+        this.distanceCounter = ((this.distanceCounter + 1));
+        this.currentBox = document.getElementById("box" + this.distanceCounter);
 
         var firstChild = document.getElementById("box-wrapper").firstElementChild;
         console.log("firstChild", firstChild);
@@ -82,13 +82,13 @@
     };
 
     CarouselController.prototype.moveRight = function () {
-        var position = (((this.currentBoxId) * 600));
+        var position = (((this.distanceCounter) * 600));
         var boxes = this.boxes;
 
         boxes.style.transform = 'translate(' + position + 'px)';
         boxes.style.webkitTransform = 'translate(' + position + 'px)';
 
-        this.currentBoxId = ((this.currentBoxId - 1));
+        this.distanceCounter = ((this.distanceCounter - 1));
 
         //var firstChild = document.getElementById("box-wrapper").firstElementChild;
         //console.log("firstChild", this.firstChild);
