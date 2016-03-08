@@ -1,65 +1,78 @@
 a {
-  cursor: default;
-  pointer-events: none;
+    cursor: default;
+    pointer-events: none;
 }
+
 .container {
-  width: 90%;
-  height: auto;
-  margin: auto;
-  padding: 0px;
-  position: relative;
+    padding: 0;
+    position: relative;
 }
+
 #carousel {
-  width: 600px;
-  height: 400px;
-  overflow: hidden;
-  padding: 0px;
-  position: relative;
-  border: solid 1px black;
+    width: 600px;
+    height: 400px;
+    overflow: hidden;
+    padding: 0px;
+    position: relative;
+    border: solid 1px black;
 }
+#carousel-wrapper {
+    width: 600px;
+    height: 400px;
+    padding: 0;
+    position: relative;
+}
+#box-wrapper{
+    -moz-transition: transform 1s;
+    -o-transition: transform 1s;
+    -webkit-transition: transform 1s;
+    transition: transform 1s;
+    width: 90000px;
+    /*width: 1800px;*/
+    height: 100%;
+    left: -400px;
+}
+
 .box {
-  -webkit-transition: transform 1s;
-  transition: transform 1s;
-  position: absolute;
-  z-index: 1;
-  width: 600px;
-  height: 400px;
+    position: absolute;
+    z-index: 1;
+    width: 600px;
+    height: 400px;
 }
-.jump {
-  -webkit-transition: transform 0s;
-  transition: transform 0s;
-  position: absolute;
-  z-index: 1;
-  width: 600px;
-  height: 400px;
-}
+
 #box1 {
     left: 0px;
-  background-color: lavender;
+    background-color: lavender;
 }
+
 #box2 {
-  left: -600px;
-  background-color: blue;
+    left: -600px;
+    background-color: blue;
 }
+
 #box3 {
-  left: -1200px;
-  background-color: green;
+    left: -600px;
+    background-color: green;
 }
+
 button {
-  top: 200px;
-  display: block;
-  z-index: 1000;
-  position: relative;
-  border: none;
-  background-color: transparent;
-  outline: none;
+    top: 200px;
+    display: block;
+    z-index: 1000;
+    position: relative;
+    border: none;
+    background-color: transparent;
+    outline: none;
 }
+
 button:focus {
-  border: none;
+    border: none;
 }
+
 #left-button {
-  float: left;
+    float: left;
 }
+
 #right-button {
-  float: right;
+    float: right;
 }
