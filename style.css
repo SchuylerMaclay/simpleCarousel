@@ -51,9 +51,34 @@ a {
 }
 
 #box3 {
-    left: -600px;
+    left: -1200px;
     background-color: green;
 }
+#box4 {
+    left: -1800px;
+    background-color: teal;
+}
+#box5 {
+    left: -2400px;
+    background-color: red;
+}
+#box6 {
+    left: -3000px;
+    background-color: turquoise;
+}
+#box7 {
+    left: -3600px;
+    background-color: maroon;
+}
+#box8 {
+    left: -4200px;
+    background-color: black;
+}
+#box9 {
+    left: -4800px;
+    background-color: tan;
+}
+
 
 button {
     top: 200px;
