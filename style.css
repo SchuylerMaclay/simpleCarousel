@@ -16,13 +16,15 @@ a {
     position: relative;
     border: solid 1px black;
 }
+
 #carousel-wrapper {
     width: 600px;
     height: 400px;
     padding: 0;
     position: relative;
 }
-#box-wrapper{
+
+#box-wrapper {
     -moz-transition: transform 1s;
     -o-transition: transform 1s;
     -webkit-transition: transform 1s;
@@ -54,31 +56,36 @@ a {
     left: -1200px;
     background-color: green;
 }
+
 #box4 {
     left: -1800px;
     background-color: teal;
 }
+
 #box5 {
     left: -2400px;
     background-color: red;
 }
+
 #box6 {
     left: -3000px;
     background-color: turquoise;
 }
+
 #box7 {
     left: -3600px;
     background-color: maroon;
 }
+
 #box8 {
     left: -4200px;
     background-color: black;
 }
+
 #box9 {
     left: -4800px;
     background-color: tan;
 }
-
 
 button {
     top: 200px;
@@ -86,12 +93,55 @@ button {
     z-index: 1000;
     position: relative;
     border: none;
+    font-size: x-large;
+    color: white;
     background-color: transparent;
     outline: none;
 }
 
 button:focus {
     border: none;
+}
+
+img {
+    width: 100%;
+}
+
+#select-buttons {
+
+    width: 100%;
+    top: 380px;
+    z-index: 1000;
+    position: relative;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    text-align: center;
+}
+
+ul li a {
+    text-decoration: none;
+    padding: .2em 1em;
+    color: #fff;
+    background-color: darkgray;
+}
+
+ul li a.selected {
+    color: #fff;
+    background-color: darkslategray;
+    outline: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+}
+
+ul li {
+    text-align: center;
+    display: inline;
 }
 
 #left-button {

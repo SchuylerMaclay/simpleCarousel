@@ -13,11 +13,11 @@
 
     CarouselController.prototype.init = function () {
         this.addButtonListeners();
-        this.prependChild(this.lastChild);
+        this.prependDiv(this.lastChild);
 
     };
 
-    CarouselController.prototype.prependChild = function (lastChild) {
+    CarouselController.prototype.prependDiv = function (lastChild) {
         this.boxes.insertBefore(lastChild, this.firstChild);
     };
 
@@ -97,7 +97,7 @@
         //console.log("lastChild", lastChild);
 
         this.lastChild.style.left = (position + 600) + 'px';
-        this.prependChild(this.lastChild);
+        this.prependDiv(this.lastChild);
 
     };
 
